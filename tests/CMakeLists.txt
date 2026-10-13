@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+project(noise_sharpening_tests CXX)
+set(CMAKE_CXX_STANDARD 17)
+add_executable(test_core test_core.cpp ../macos/Sources/CNoiseSharpening/ns.cpp)
+target_include_directories(test_core PRIVATE ../macos/Sources/CNoiseSharpening/include)
+enable_testing()
+add_test(NAME core COMMAND test_core)
